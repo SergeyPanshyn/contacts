@@ -7,6 +7,7 @@ import android.view.View
 import android.view.ViewGroup
 import butterknife.ButterKnife
 import com.example.sergey.contacts.R
+import com.example.sergey.contacts.data.db.entity.Contact
 import com.example.sergey.contacts.presentation.main.MainActivity
 import javax.inject.Inject
 
@@ -28,6 +29,10 @@ class ListFragment: Fragment(), ListPresenter.ListView {
     private fun daggerInit() {
         (activity as MainActivity).listComponent?.inject(this)
         listPresenter.setView(this)
+    }
+
+    override fun showContacts(contacts: List<Contact>) {
+        //TODO insert contacts to RV
     }
 
 }

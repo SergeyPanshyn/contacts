@@ -30,4 +30,5 @@ class AddContactFragment: Fragment(), AddContactPresenter.AddContactView {
         addContactPresenter.setView(this)
     }
 
+
 }
