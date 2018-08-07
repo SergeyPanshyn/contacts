@@ -16,11 +16,11 @@ import javax.inject.Singleton
 @Singleton
 interface AppComponent {
 
-//    fun provideLoginComponent(loginModule: LoginModule): LoginComponent
-//
-//    fun provideListComponent(listModule: ListModule): ListComponent
-//
-//    fun provideAddContactComponent(addContactModule: AddContactModule): AddContactComponent
+    fun provideLoginComponent(loginModule: LoginModule): LoginComponent
+
+    fun provideListComponent(listModule: ListModule): ListComponent
+
+    fun provideAddContactComponent(addContactModule: AddContactModule): AddContactComponent
 
     fun inject(contactsApp: ContactsApp)
 
