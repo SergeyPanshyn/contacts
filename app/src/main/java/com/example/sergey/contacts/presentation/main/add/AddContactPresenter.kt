@@ -1,4 +1,11 @@
 package com.example.sergey.contacts.presentation.main.add
 
-interface AddContactPresenter {
+import com.example.sergey.contacts.presentation.Presenter
+
+interface AddContactPresenter<T>: Presenter<T> {
+
+    interface AddContactView {
+
+    }
+
 }

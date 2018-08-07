@@ -19,7 +19,7 @@ class MainActivity: AppCompatActivity() {
 
     val listComponent by lazy { ContactsApp.appComponent?.provideListComponent(ListModule()) }
 
-    val appCompatComponent by lazy { ContactsApp.appComponent?.provideAddContactComponent(AddContactModule()) }
+    val addContactComponent by lazy { ContactsApp.appComponent?.provideAddContactComponent(AddContactModule()) }
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
