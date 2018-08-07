@@ -14,7 +14,7 @@ class SplashActivity : AppCompatActivity() {
         if (this.isLoggedIn()) {
             startActivity(Intent(this, MainActivity::class.java))
         } else {
-            startActivity(Intent(this, LoginActivity::class.java))
+            startActivity(Intent(this, MainActivity::class.java))
         }
         finish()
     }

@@ -7,6 +7,8 @@ interface AddContactPresenter<T>: Presenter<T> {
 
     interface AddContactView {
 
+        fun one()
+
     }
 
     fun saveContact(contact: Contact)

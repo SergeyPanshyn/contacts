@@ -2,15 +2,18 @@ package com.example.sergey.contacts.presentation.main
 
 import android.os.Bundle
 import android.support.v4.app.Fragment
-import android.support.v4.app.ListFragment
 import android.support.v7.app.AppCompatActivity
 import butterknife.ButterKnife
 import com.example.sergey.contacts.R
 import com.example.sergey.contacts.presentation.ContactsApp
+import com.example.sergey.contacts.presentation.main.add.AddContactFragment
 import com.example.sergey.contacts.presentation.main.add.di.AddContactModule
+import com.example.sergey.contacts.presentation.main.list.ListFragment
 import com.example.sergey.contacts.presentation.main.list.di.ListModule
 
-class MainActivity: AppCompatActivity() {
+class MainActivity: AppCompatActivity(),
+        ListFragment.ListListener,
+        AddContactFragment.AddContactListener {
 
     companion object {
         const val ADD_CONTACT_FRAGMENT_TAG = "AddContactFragmentTag"
@@ -35,6 +38,14 @@ class MainActivity: AppCompatActivity() {
 
     private fun setupFragment() {
         replaceFragment(ListFragment(), LIST_FRAGMENT_TAG)
+    }
+
+    override fun onAddContactClick() {
+        replaceFragment(AddContactFragment(), ADD_CONTACT_FRAGMENT_TAG, true)
+    }
+
+    override fun onContactAdded() {
+        supportFragmentManager.popBackStack()
     }
 
     private fun replaceFragment(fragment: Fragment, tag: String, addToBackStack: Boolean = false) {

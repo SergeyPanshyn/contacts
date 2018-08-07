@@ -11,7 +11,9 @@ class AddContactPresenterImpl<T: AddContactPresenter.AddContactView>(private val
 
     override fun saveContact(contact: Contact) {
         launch(UI) {
-            contactsInteractor.saveContact(contact)
+            val s = contactsInteractor.saveContact(contact)
+
+            view?.one()
         }
     }
 
