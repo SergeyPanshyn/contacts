@@ -1,9 +1,6 @@
 package com.example.sergey.contacts.data.db.dao
 
-import android.arch.persistence.room.Dao
-import android.arch.persistence.room.Insert
-import android.arch.persistence.room.Query
-import android.arch.persistence.room.Update
+import android.arch.persistence.room.*
 import com.example.sergey.contacts.data.db.entity.Contact
 
 @Dao
@@ -23,5 +20,8 @@ interface ContactsDao {
 
     @Query("DELETE FROM contact")
     fun clearContacts()
+
+    @Delete
+    fun deleteContact(contact: Contact)
 
 }

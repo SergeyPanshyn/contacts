@@ -8,5 +8,9 @@ data class Contact(
         @PrimaryKey(autoGenerate = true)
         val id: Long? = null,
         val firstName: String,
-        val lastName: String
+        val lastName: String,
+        @TypeConverters(ListConverter::class)
+        var phonesList: List<String>? = null,
+        @TypeConverters(ListConverter::class)
+        var emailsList: List<String>? = null
 )

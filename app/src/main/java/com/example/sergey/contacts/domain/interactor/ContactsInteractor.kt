@@ -11,4 +11,8 @@ class ContactsInteractor(
 
     suspend fun saveContact(contact: Contact) = contactsRepository.saveContact(contact)
 
+    suspend fun deleteContact(contact: Contact) = contactsRepository.deleteContact(contact)
+
+    suspend fun updateContact(contact: Contact) = contactsRepository.updateContact(contact)
+
 }

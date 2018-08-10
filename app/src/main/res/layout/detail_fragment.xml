@@ -1,0 +1,132 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:fillViewport="true">
+
+    <android.support.constraint.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:focusableInTouchMode="true">
+
+        <TextView
+            android:id="@+id/detail_fragment_name_tv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="10dp"
+            android:textColor="@color/colorBlack"
+            android:textSize="28sp"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:text="Ivan Ivanov" />
+
+        <View
+            android:id="@+id/detail_fragment_name_view"
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="@color/colorGrey"
+            app:layout_constraintTop_toBottomOf="@+id/detail_fragment_name_tv" />
+
+        <ImageView
+            android:id="@+id/detail_fragment_call_iv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="10dp"
+            android:background="?attr/selectableItemBackgroundBorderless"
+            android:clickable="true"
+            android:focusable="true"
+            android:src="@drawable/ic_phone_grey600_24dp"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toLeftOf="@+id/detail_fragment_email_iv"
+            app:layout_constraintTop_toBottomOf="@+id/detail_fragment_name_view" />
+
+        <ImageView
+            android:id="@+id/detail_fragment_email_iv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="10dp"
+            android:background="?attr/selectableItemBackgroundBorderless"
+            android:clickable="true"
+            android:focusable="true"
+            android:src="@drawable/ic_email_grey600_24dp"
+            app:layout_constraintLeft_toRightOf="@+id/detail_fragment_call_iv"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/detail_fragment_name_view" />
+
+        <View
+            android:id="@+id/detail_fragment_phone_email_divider_view"
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:layout_marginTop="10dp"
+            android:background="@color/colorGrey"
+            app:layout_constraintTop_toBottomOf="@+id/detail_fragment_call_iv" />
+
+        <TextView
+            android:id="@+id/detail_fragment_phone_tv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="10dp"
+            android:text="@string/add_contact_phones"
+            android:visibility="gone"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/detail_fragment_phone_email_divider_view" />
+
+        <android.support.v7.widget.RecyclerView
+            android:id="@+id/detail_fragment_phones_rv"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="10dp"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/detail_fragment_phone_tv"
+            tools:itemCount="2"
+            tools:listitem="@layout/detail_text_rv_item" />
+
+        <TextView
+            android:id="@+id/detail_fragment_email_tv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="10dp"
+            android:text="@string/add_contact_emails"
+            android:visibility="gone"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/detail_fragment_phones_rv" />
+
+        <android.support.v7.widget.RecyclerView
+            android:id="@+id/detail_fragment_emails_rv"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="10dp"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/detail_fragment_email_tv"
+            tools:itemCount="2"
+            tools:listitem="@layout/detail_text_rv_item" />
+
+        <Button
+            android:id="@+id/detail_fragment_edit_button"
+            android:layout_width="match_parent"
+            android:layout_height="60dp"
+            android:text="@string/detail_edit"
+            android:textColor="@color/colorWhite"
+            app:layout_constraintBottom_toTopOf="@+id/detail_fragment_delete_button"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/detail_fragment_emails_rv"
+            app:layout_constraintVertical_chainStyle="packed" />
+
+        <Button
+            android:id="@+id/detail_fragment_delete_button"
+            android:layout_width="match_parent"
+            android:layout_height="60dp"
+            android:backgroundTint="@color/colorRed"
+            android:text="@string/detail_delete"
+            android:textColor="@color/colorWhite"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/detail_fragment_edit_button" />
+
+    </android.support.constraint.ConstraintLayout>
+
+</ScrollView>

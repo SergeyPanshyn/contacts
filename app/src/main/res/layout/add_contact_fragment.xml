@@ -1,41 +1,88 @@
 <?xml version="1.0" encoding="utf-8"?>
-<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    xmlns:app="http://schemas.android.com/apk/res-auto">
+    android:fillViewport="true">
 
-    <EditText
-        android:id="@+id/add_contact_fragment_first_name_et"
+    <android.support.constraint.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="parent"
-        android:layout_margin="10dp"
-        android:hint="First name"
-        />
+        android:focusableInTouchMode="true">
 
-    <EditText
-        android:id="@+id/add_contact_fragment_last_name_et"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        app:layout_constraintTop_toBottomOf="@+id/add_contact_fragment_first_name_et"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="parent"
-        android:layout_margin="10dp"
-        android:hint="Last name"
-        />
+        <EditText
+            android:id="@+id/add_contact_fragment_first_name_et"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="10dp"
+            android:hint="@string/add_contact_first_name"
+            android:inputType="textPersonName"
+            android:maxLines="1"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
 
-    <Button
-        android:id="@+id/add_contact_fragment_save_button"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="parent"
-        android:layout_margin="10dp"
-        android:text="Save"
-        />
+        <EditText
+            android:id="@+id/add_contact_fragment_last_name_et"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="10dp"
+            android:hint="@string/add_contact_last_name"
+            android:inputType="textPersonName"
+            android:maxLines="1"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/add_contact_fragment_first_name_et" />
 
+        <TextView
+            android:id="@+id/add_contact_fragment_phone_tv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="10dp"
+            android:text="@string/add_contact_phones"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/add_contact_fragment_last_name_et" />
 
-</android.support.constraint.ConstraintLayout>
+        <android.support.v7.widget.RecyclerView
+            android:id="@+id/add_contact_fragment_phones_rv"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="10dp"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/add_contact_fragment_phone_tv"
+            tools:itemCount="1"
+            tools:listitem="@layout/edit_text_rv_item" />
+
+        <TextView
+            android:id="@+id/add_contact_fragment_email_tv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="10dp"
+            android:text="@string/add_contact_emails"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/add_contact_fragment_phones_rv" />
+
+        <android.support.v7.widget.RecyclerView
+            android:id="@+id/add_contact_fragment_emails_rv"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="10dp"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/add_contact_fragment_email_tv"
+            tools:itemCount="1"
+            tools:listitem="@layout/edit_text_rv_item" />
+
+        <Button
+            android:id="@+id/add_contact_fragment_save_button"
+            android:layout_width="match_parent"
+            android:layout_height="60dp"
+            android:text="@string/add_contact_save"
+            android:textColor="@color/colorWhite"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/add_contact_fragment_emails_rv" />
+
+    </android.support.constraint.ConstraintLayout>
+</ScrollView>

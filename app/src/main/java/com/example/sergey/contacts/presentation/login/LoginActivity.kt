@@ -7,6 +7,7 @@ import com.example.sergey.contacts.R
 import com.google.android.gms.auth.api.signin.GoogleSignInOptions
 import com.google.android.gms.common.SignInButton
 import android.content.Intent
+import android.util.Log
 import android.widget.Toast
 import butterknife.ButterKnife
 import com.example.sergey.contacts.extension.setLoggedIn
@@ -19,10 +20,12 @@ import com.google.android.gms.common.api.ApiException
 
 class LoginActivity : AppCompatActivity() {
 
+    companion object {
+        private const val SIGN_IN_REQUEST_CODE: Int = 123
+    }
+
     @BindView(R.id.sign_in_button)
     lateinit var signInButton: SignInButton
-
-    private val SIGN_IN_REQUEST_CODE: Int = 123
 
     private var googleSignInClient: GoogleSignInClient? = null
 
@@ -63,6 +66,11 @@ class LoginActivity : AppCompatActivity() {
 
             handleSuccessfulSignIn()
         } catch (e: ApiException) {
+            Log.d("afdafadfad", e.message)
+            Log.d("afdafadfad", e.localizedMessage)
+            Log.d("afdafadfad", e.statusCode.toString())
+            Log.d("afdafadfad", e.stackTrace.toString())
+            e.printStackTrace()
             Toast.makeText(this, "Error sign in", Toast.LENGTH_SHORT).show()
         }
 
@@ -72,5 +80,7 @@ class LoginActivity : AppCompatActivity() {
         this.setLoggedIn()
 
         startActivity(Intent(this, MainActivity::class.java))
+
+        finish()
     }
 }

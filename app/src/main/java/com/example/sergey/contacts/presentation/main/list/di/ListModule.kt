@@ -13,8 +13,7 @@ class ListModule {
 
     @Provides
     @PerActivity
-    internal fun provideListPresenter(contactsInteractor: ContactsInteractor): ListPresenter<ListPresenter.ListView>
-            = ListPresenterImpl(contactsInteractor)
+    internal fun provideListPresenter(contactsInteractor: ContactsInteractor): ListPresenter<ListPresenter.ListView> = ListPresenterImpl(contactsInteractor)
 
     @Provides
     @PerActivity

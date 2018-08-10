@@ -5,7 +5,7 @@ import com.example.sergey.contacts.presentation.di.AppComponent
 import com.example.sergey.contacts.presentation.di.AppModule
 import com.example.sergey.contacts.presentation.di.DaggerAppComponent
 
-class ContactsApp: Application() {
+class ContactsApp : Application() {
 
     companion object {
         var appComponent: AppComponent? = null

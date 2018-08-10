@@ -1,6 +1,27 @@
 <resources>
     <string name="app_name">Contacts</string>
 
+    <!-- Add contact -->
+    <string name="add_contact_first_name">First name</string>
+    <string name="add_contact_last_name">Last name</string>
+    <string name="add_contact_phones">Phones:</string>
+    <string name="add_contact_emails">Emails:</string>
+    <string name="add_contact_save">Save</string>
+
+    <!-- Detail -->
+    <string name="detail_edit">Edit contact</string>
+    <string name="detail_delete">Delete contact</string>
+
+    <!-- List -->
+    <string name="list_sort_name">Sort by first name</string>
+    <string name="list_sort_last_name">Sort by last name</string>
+
+    <!-- Login -->
+    <string name="login_text">Sign in with your Google account to start using the app.</string>
+
+    <!-- Other -->
+    <string name="full_name">%s %s</string>
+
     <!-- Prefs -->
     <string name="logged_in">logged_in</string>
 </resources>

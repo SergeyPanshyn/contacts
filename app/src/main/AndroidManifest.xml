@@ -1,6 +1,8 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.example.sergey.contacts">
 
+    <uses-permission android:name="android.permission.CALL_PHONE" />
+
     <application
         android:name=".presentation.ContactsApp"
         android:allowBackup="false"

@@ -1,19 +1,19 @@
-package com.example.sergey.contacts.presentation.main.add
+package com.example.sergey.contacts.presentation.main.detail
 
 import com.example.sergey.contacts.data.db.entity.Contact
 import com.example.sergey.contacts.domain.interactor.ContactsInteractor
 import kotlinx.coroutines.experimental.android.UI
 import kotlinx.coroutines.experimental.launch
 
-class AddContactPresenterImpl<T: AddContactPresenter.AddContactView>(private val contactsInteractor: ContactsInteractor): AddContactPresenter<T> {
+class DetailPresenterImpl<T : DetailPresenter.DetailView>(val contactsInteractor: ContactsInteractor) : DetailPresenter<T> {
 
     private var view: T? = null
 
-    override fun saveContact(contact: Contact) {
+    override fun deleteContact(contact: Contact) {
         launch(UI) {
-            val s = contactsInteractor.saveContact(contact)
+            contactsInteractor.deleteContact(contact)
 
-            view?.one()
+            view?.onContactDeleted()
         }
     }
 
@@ -22,7 +22,6 @@ class AddContactPresenterImpl<T: AddContactPresenter.AddContactView>(private val
     }
 
     override fun destroy() {
-        this.view = null
+        view = null
     }
-
 }
