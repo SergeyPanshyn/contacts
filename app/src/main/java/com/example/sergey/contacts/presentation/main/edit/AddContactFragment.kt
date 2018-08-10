@@ -16,6 +16,7 @@ import com.example.sergey.contacts.R
 import com.example.sergey.contacts.data.db.entity.Contact
 import com.example.sergey.contacts.data.entity.ContactParcelable
 import com.example.sergey.contacts.data.entity.enum.EditTextInput
+import com.example.sergey.contacts.extension.getRandomColor
 import com.example.sergey.contacts.presentation.main.MainActivity
 import com.example.sergey.contacts.presentation.main.edit.adapter.EditTextRvAdapter
 import javax.inject.Inject
@@ -169,7 +170,8 @@ class AddContactFragment : Fragment(), AddContactPresenter.AddContactView {
                             firstName,
                             lastName,
                             localPhonesList,
-                            localEmailsList
+                            localEmailsList,
+                            getRandomColor()
                     )
             )
         } ?: addContactPresenter.saveContact(
@@ -178,7 +180,8 @@ class AddContactFragment : Fragment(), AddContactPresenter.AddContactView {
                         firstName,
                         lastName,
                         localPhonesList,
-                        localEmailsList
+                        localEmailsList,
+                        getRandomColor()
                 )
         )
     }

@@ -3,19 +3,23 @@ package com.example.sergey.contacts.data.entity
 import android.os.Parcel
 import android.os.Parcelable
 
+
 data class ContactParcelable(
-        val id: Long,
+        val id: Long? = null,
         val firstName: String,
         val lastName: String,
         val phoneList: List<String>? = null,
-        val emailList: List<String>? = null
-) : Parcelable {
+        val emailList: List<String>? = null,
+        val iconColor: Int
+): Parcelable {
     constructor(parcel: Parcel) : this(
-            parcel.readValue(Long::class.java.classLoader) as Long,
+            parcel.readValue(Long::class.java.classLoader) as? Long,
             parcel.readString(),
             parcel.readString(),
             parcel.createStringArrayList(),
-            parcel.createStringArrayList())
+            parcel.createStringArrayList(),
+            parcel.readInt()) {
+    }
 
     override fun writeToParcel(parcel: Parcel, flags: Int) {
         parcel.writeValue(id)
@@ -23,6 +27,7 @@ data class ContactParcelable(
         parcel.writeString(lastName)
         parcel.writeStringList(phoneList)
         parcel.writeStringList(emailList)
+        parcel.writeInt(iconColor)
     }
 
     override fun describeContents(): Int {

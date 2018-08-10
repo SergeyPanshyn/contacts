@@ -12,5 +12,6 @@ data class Contact(
         @TypeConverters(ListConverter::class)
         var phonesList: List<String>? = null,
         @TypeConverters(ListConverter::class)
-        var emailsList: List<String>? = null
+        var emailsList: List<String>? = null,
+        val iconColor: Int
 )

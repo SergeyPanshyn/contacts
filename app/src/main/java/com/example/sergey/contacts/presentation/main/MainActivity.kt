@@ -75,7 +75,8 @@ class MainActivity : AppCompatActivity(),
                         contact.firstName,
                         contact.lastName,
                         contact.phonesList,
-                        contact.emailsList
+                        contact.emailsList,
+                        contact.iconColor
                 )
         ), DETAIL_FRAGMENT_TAG, true)
     }
@@ -94,7 +95,8 @@ class MainActivity : AppCompatActivity(),
                         contact.firstName,
                         contact.lastName,
                         contact.phonesList,
-                        contact.emailsList
+                        contact.emailsList,
+                        contact.iconColor
                 )
         ), DETAIL_FRAGMENT_TAG, true)
     }

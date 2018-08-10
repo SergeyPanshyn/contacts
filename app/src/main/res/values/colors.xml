@@ -8,4 +8,17 @@
     <color name="colorWhite">#ffffff</color>
     <color name="colorGrey">#a4cecece</color>
     <color name="colorRed">#ff0000</color>
+
+    <!-- Tint colors -->
+    <color name="tintColor0">#FFD84C3F</color>
+    <color name="tintColor1">#303F9F</color>
+    <color name="tintColor2">#FF119D5A</color>
+    <color name="tintColor3">#FF699F3C</color>
+    <color name="tintColor4">#FF059BE4</color>
+    <color name="tintColor5">#FF9B35AC</color>
+    <color name="tintColor6">#FF683BB3</color>
+    <color name="tintColor7">#FF757575</color>
+    <color name="tintColor8">#FFFE5724</color>
+    <color name="tintColor9">#FFEB2064</color>
+
 </resources>

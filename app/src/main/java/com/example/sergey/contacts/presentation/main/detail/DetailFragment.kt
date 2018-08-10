@@ -120,16 +120,23 @@ class DetailFragment : Fragment(), DetailPresenter.DetailView {
 
     @OnClick(R.id.detail_fragment_call_iv)
     fun onCallButtonClick() {
-        contact.phoneList?.let {
-            if (it.size == 1) initCallIntent(it[0]) else buildCallChooserDialog(it)
-        } ?: Toast.makeText(context, "No phones was added", Toast.LENGTH_SHORT).show()
+        if (contact.phoneList == null || contact.phoneList!!.isEmpty()) {
+            Toast.makeText(context, "No phones was added", Toast.LENGTH_SHORT).show()
+            return
+        }
+
+        if (contact.phoneList!!.size == 1) initCallIntent(contact.phoneList!![0]) else buildCallChooserDialog(contact.phoneList!!)
+
     }
 
     @OnClick(R.id.detail_fragment_email_iv)
     fun onEmailButtonClick() {
-        contact.emailList?.let {
-            if (it.size == 1) initEmailIntent(it[0]) else buildEmailChooserDialog(it)
-        } ?: Toast.makeText(context, "No emails was added", Toast.LENGTH_SHORT).show()
+        if (contact.emailList == null || contact.emailList!!.isEmpty()) {
+            Toast.makeText(context, "No emails was added", Toast.LENGTH_SHORT).show()
+            return
+        }
+
+        if (contact.emailList!!.size == 1) initCallIntent(contact.emailList!![0]) else buildCallChooserDialog(contact.emailList!!)
     }
 
     @OnClick(R.id.detail_fragment_delete_button)
@@ -140,7 +147,8 @@ class DetailFragment : Fragment(), DetailPresenter.DetailView {
                         contact.firstName,
                         contact.lastName,
                         contact.phoneList,
-                        contact.emailList
+                        contact.emailList,
+                        contact.iconColor
                 )
         )
     }
